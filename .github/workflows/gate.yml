@@ -9,7 +9,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: TDS identity: 24f2006763@ds.study.iitm.ac.in
+      - name: "TDS identity: 24f2006763@ds.study.iitm.ac.in"
         run: echo "Verifying TDS identity"
 
       - name: Checkout repository
@@ -22,8 +22,9 @@ jobs:
 
       - name: Install dependencies
         run: |
+          pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run test suite
         run: |
-          pytest
+          python -m pytest test_app.py
